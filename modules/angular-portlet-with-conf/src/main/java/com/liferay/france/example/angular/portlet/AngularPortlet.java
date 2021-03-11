@@ -38,6 +38,9 @@ public class AngularPortlet extends MVCPortlet {
 			RenderRequest renderRequest, RenderResponse renderResponse)
 		throws IOException, PortletException {
 
+		renderRequest.setAttribute("heroId", 1L);
+		renderRequest.setAttribute("heroName", "Windstorm");
+
 		renderRequest.setAttribute(
 			"mainRequire",
 			_npmResolver.resolveModuleName("angular-portlet-with-conf") + " as main");

@@ -13,7 +13,7 @@ export class DynamicLoader {
 	// the portlet's DOM, which is different for each portlet instance and,
 	// thus, cannot be determined until the page is rendered (during runtime).
 
-	loadComponent<T>(component: Type<T>, dom: Element) {
+	loadComponent<T>(component: Type<T>, dom: Element, config: Type<T>) {
 		(<NgZone>this.injector.get(NgZone)).run(() => {
 			const componentFactory = this.injector
 				.get(ComponentFactoryResolver)
@@ -22,6 +22,7 @@ export class DynamicLoader {
 				this.injector,
 				[],
 				dom,
+				config,
 			);
 			this.injector.get(ApplicationRef).attachView(componentRef.hostView);
 		});

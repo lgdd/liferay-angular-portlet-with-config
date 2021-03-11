@@ -13,4 +13,6 @@ taglib uri="http://liferay.com/tld/ui" prefix="liferay-ui" %>
 
 <%
 String mainRequire = (String)renderRequest.getAttribute("mainRequire");
+long heroId = (long) renderRequest.getAttribute("heroId");
+String heroName = (String)renderRequest.getAttribute("heroName");
 %>

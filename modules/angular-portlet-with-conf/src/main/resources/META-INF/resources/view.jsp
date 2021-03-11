@@ -3,5 +3,8 @@
 <div id="<portlet:namespace />"></div>
 
 <aui:script require="<%= mainRequire %>">
-	main.default('#<portlet:namespace />');
+	main.default('#<portlet:namespace />', {
+		heroId: "<%= heroId %>",
+		heroName: "<%= heroName %>"
+	});
 </aui:script>
