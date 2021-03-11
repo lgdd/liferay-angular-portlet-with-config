@@ -1,0 +1,5 @@
+Bundle-Name: angular-portlet-with-conf
+Bundle-SymbolicName: com.liferay.france.example.angular
+Bundle-Version: 1.0.0
+Export-Package: com.liferay.france.example.angular.constants
+Web-ContextPath: /angular-portlet-with-conf
