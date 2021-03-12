@@ -1,29 +1,20 @@
+
 {
+	"compileOnSave": false,
 	"compilerOptions": {
-		"declaration": false,
-		"emitDecoratorMetadata": true,
-		"experimentalDecorators": true,
-		"inlineSources": true,
-		"lib": [
-			"es2015",
-			"dom"
-		],
-		"module": "commonjs",
-		"moduleResolution": "node",
-		"noFallthroughCasesInSwitch": true,
-		"noStrictGenericChecks": true,
-		"outDir":  "build/resources/main/META-INF/resources/lib",
-		"skipLibCheck": true,
+		"baseUrl": "./",
+		"outDir": "build/resources/main/META-INF/resources/lib",
 		"sourceMap": true,
-		"strict": true,
-		"suppressImplicitAnyIndexErrors": true,
-		"target": "es5",
-		"typeRoots": [
-			"./node_modules/@types/"
-		],
-		"types": [
-			"jasmine",
-			 "node"
+		"declaration": false,
+		"downlevelIteration": true,
+		"experimentalDecorators": true,
+		"moduleResolution": "node",
+		"importHelpers": true,
+		"target": "es2015",
+		"module": "commonjs",
+		"lib": [
+			"es2018",
+			"dom"
 		]
 	},
 	"include": [
