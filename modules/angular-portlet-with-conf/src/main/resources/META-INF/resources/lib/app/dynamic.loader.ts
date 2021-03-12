@@ -9,11 +9,11 @@ import {
 export class DynamicLoader {
 	constructor(private injector: Injector) {}
 
-	// Load an Angular component dinamically so that we can attach it to
+	// Load an Angular component dynamically so that we can attach it to
 	// the portlet's DOM, which is different for each portlet instance and,
 	// thus, cannot be determined until the page is rendered (during runtime).
 
-	loadComponent<T>(component: Type<T>, dom: Element, config: Type<T>) {
+	loadComponent<T>(component: Type<T>, dom: Element, config: any) {
 		(<NgZone>this.injector.get(NgZone)).run(() => {
 			const componentFactory = this.injector
 				.get(ComponentFactoryResolver)
@@ -22,8 +22,8 @@ export class DynamicLoader {
 				this.injector,
 				[],
 				dom,
-				config,
 			);
+			componentRef.instance["config"] = config;
 			this.injector.get(ApplicationRef).attachView(componentRef.hostView);
 		});
 	}
